@@ -1,24 +1,19 @@
 function binarySearch(list, element) {
-    if (list.length === 0) {
-        return -1; // List is empty
+    if (list.length == 0) {
+        return -1; //list is empty
     }
-
-    let low = 0;
-    let high = list.length - 1;
-
-    while (low <= high) {
-
-        //Used help from Chat GPT to figure out how to use bitwise shifting
-        const midIndex = (low + high) >> 1;
-
-        if (list[midIndex] === element) {
-            return midIndex; 
-        } else if (list[midIndex] < element) {
-            low = midIndex + 1; 
-        } else {
-            high = midIndex - 1;
-        }
+  
+    for (let low = 0, high = list.length - 1; low <= high; low++, high++) {
+      const mid = (low + high) / 2; 
+      
+      if (list[mid] == element) {
+        return Math.floor(mid); //used help from chat GPT in this line to figure how to convert it back to an integer
+      } else if (list[mid] < element) {
+        low = mid + 1;
+      } else {
+        high = mid - 1;
+      }
     }
-
-    return -1; // The list didn't have the element we were looking for
-}
+  
+    return -1; //The list doesn't have the element we are looking for
+  }
