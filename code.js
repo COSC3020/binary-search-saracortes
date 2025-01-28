@@ -8,12 +8,13 @@ function binarySearch(list, element) {
     const midIndex = Math.floor((low + high) / 2);
 
     if (list[midIndex] === element) {
-        result = midIndex; 
-        high = midIndex - 1;
-    } else if (list[midIndex] < element) {
-        low = midIndex + 1; 
+      return midIndex;
+    }
+
+    if (list[midIndex] < element) {
+      low = midIndex + 1;
     } else {
-        high = midIndex - 1; 
+      high = midIndex - 1;
     }
   }
 
