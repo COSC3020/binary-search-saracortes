@@ -1,7 +1,6 @@
 function binarySearch(list, element) {
   let low = 0;
   let high = list.length - 1;
-  let result = -1;
 
   while (low <= high) {
     //used help from Chat GPT to figure out how to calculate the middle index
@@ -18,5 +17,5 @@ function binarySearch(list, element) {
     }
   }
 
-  return result;
+  return -1;
 }
