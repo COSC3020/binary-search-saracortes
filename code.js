@@ -1,13 +1,15 @@
 function binarySearch(list, element) {
   let low = 0;
   let high = list.length - 1;
+  let result = -1;
 
   while (low <= high) {
     //used help from Chat GPT to figure out how to calculate the middle index
     const midIndex = Math.floor((low + high) / 2);
 
     if (list[midIndex] === element) {
-        return midIndex; 
+        result = midIndex; 
+        high = midIndex - 1;
     } else if (list[midIndex] < element) {
         low = midIndex + 1; 
     } else {
@@ -15,5 +17,5 @@ function binarySearch(list, element) {
     }
   }
 
-  return -1; //list didnt have element
+  return result;
 }
