@@ -4,7 +4,7 @@ function binarySearch(list, element) {
 
   while (low <= high) {
     //used help from Chat GPT to figure out how to calculate the middle index
-    const midIndex = Math.floor((low + high) / 2);
+    int midIndex = low + (high - low) / 2;
 
     if (list[midIndex] === element) {
       return midIndex;
