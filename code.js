@@ -3,8 +3,8 @@ function binarySearch(list, element) {
   let high = list.length - 1;
 
   while (low <= high) {
-    //used help from Chat GPT to figure out how to calculate the middle index
-    int midIndex = low + (high - low) / 2;
+    //used help from chat gpt to figure out how to round to nearest int
+    const midIndex = Math.floor((low + high) / 2);
 
     if (list[midIndex] === element) {
       return midIndex;
